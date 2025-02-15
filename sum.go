@@ -4,20 +4,15 @@ import "fmt"
 
 func main() {
 
-	fmt.Println(sum(5, 5))
-	fmt.Println(sub(5, 5))
-	fmt.Println(times(5, 5))
+	result, err := sum(5, 5)
+	if err != nil {
+		fmt.Println("Error", err)
+	} else {
+		fmt.Println("Result", result)
+	}
 
 }
 
-func sum(a int, b int) int {
-	return a + b
-}
-
-func sub(a int, b int) int {
-	return a - b
-}
-
-func times(a int, b int) int {
-	return a * b
+func sum(a, b int) (int, error) {
+	return a + b, nil
 }
