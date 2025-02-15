@@ -16,3 +16,7 @@ func main() {
 func sum(a, b int) (int, error) {
 	return a + b, nil
 }
+
+func times(a, b int) (int, error) {
+	return a * b, nil
+}
