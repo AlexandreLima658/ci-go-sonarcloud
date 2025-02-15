@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func Test(t *testing.T) {
 
@@ -27,5 +30,47 @@ func Test(t *testing.T) {
 			t.Errorf("Times was incorrect, got: %d, want: %d.", total, 25)
 		}
 	})
+
+	t.Run("Should print sum", func(t *testing.T) {
+		
+		result := sum(5, 5)
+		_, err := fmt.Println(result)
+		
+		if err != nil {
+			t.Errorf("Error: %v", err)
+		}
+
+		if result != 10 {
+			t.Errorf("Sum was incorrect, got: %d, want: %d.", result, 10)
+		}
+	})
+
+	t.Run("Should print sub", func(t *testing.T) {
+		
+		result := sub(5, 5)
+		_, err := fmt.Println(result)
+		
+		if err != nil {
+			t.Errorf("Error: %v", err)
+		}
+
+		if result != 0 {
+			t.Errorf("Sub was incorrect, got: %d, want: %d.", result, 0)
+		}
+	})
+	t.Run("Should print times", func(t *testing.T) {
+		
+		result := times(5, 5)
+		_, err := fmt.Println(result)
+		
+		if err != nil {
+			t.Errorf("Error: %v", err)
+		}
+
+		if result != 25 {
+			t.Errorf("Times was incorrect, got: %d, want: %d.", result, 25)
+		}
+	})
+
 
 }

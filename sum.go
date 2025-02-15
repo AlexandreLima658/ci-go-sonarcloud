@@ -10,14 +10,14 @@ func main() {
 
 }
 
-func sum(a int, b int) int {
+func sum(a, b int) int {
 	return a + b
 }
 
-func sub(a int, b int) int {
+func sub(a, b int) int {
 	return a - b
 }
 
-func times(a int, b int) int {
+func times(a, b int) int {
 	return a * b
 }
