@@ -22,6 +22,20 @@ func Test(t *testing.T) {
 		}
 
 	})
+
+	t.Run("Should calculate times", func(t *testing.T) {
+		
+		total, err := times(5, 5)
+
+		if err != nil {
+			t.Errorf("Error: %s", err)
+		}
+
+		if total != 25 {
+			t.Errorf("Times was incorrect, got: %d, want: %d.", total, 25)
+
+		}
+	})
 }
 
 func TestMain(t *testing.T) {
@@ -47,4 +61,8 @@ func TestMain(t *testing.T) {
 	if output != expectedOutput {
 		t.Errorf("Saída inesperada: \nEsperado: %q\nObtido: %q", expectedOutput, output)
 	}
+
+
+
+
 }
